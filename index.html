@@ -140,10 +140,21 @@
                     <h3 class="font-bold mt-4">Atribut</h3>
                 </div>
 
-                <div class="bg-white rounded-3xl p-8 shadow">
-                    🎓
-                    <h3 class="font-bold mt-4">PKKMB</h3>
-                </div>
+                <div
+    onclick="openModal()"
+    class="bg-white rounded-3xl p-8 shadow cursor-pointer hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+
+    <div class="text-4xl">🎓</div>
+
+    <h3 class="font-bold mt-4">
+        PKKMB
+    </h3>
+
+    <p class="text-sm text-gray-500 mt-2">
+        Lihat kebutuhan PKKMB
+    </p>
+
+</div>
 
                 <div class="bg-white rounded-3xl p-8 shadow">
                     🛵
@@ -265,5 +276,110 @@
         </div>
     </section>
 
+    <!-- Modal PKKMB -->
+<div
+    id="pkkmbModal"
+    class="hidden fixed inset-0 bg-black/60 z-50 flex items-center justify-center p-6">
+
+    <div class="bg-white rounded-3xl max-w-5xl w-full p-8 relative">
+
+        <button
+            onclick="closeModal()"
+            class="absolute top-5 right-5 text-2xl font-bold">
+            ×
+        </button>
+
+        <h2 class="text-3xl font-bold mb-8">
+            Perlengkapan PKKMB
+        </h2>
+
+        <div class="grid md:grid-cols-2 gap-8">
+
+            <!-- Bekel -->
+            <a href="detail_produk.html"
+                class="bg-stone-50 rounded-3xl overflow-hidden hover:shadow-xl transition">
+
+                <img
+                    src="f.jpeg"
+                    class="w-full h-72 object-cover">
+
+                <div class="p-6">
+
+                    <span class="bg-orange-100 text-orange-600 px-3 py-1 rounded-full text-sm">
+                        PKKMB
+                    </span>
+
+                    <h3 class="text-xl font-bold mt-4">
+                        Bekel PKKMB
+                    </h3>
+
+                    <p class="text-gray-500 mt-2">
+                        Paket perlengkapan kebutuhan bekal kegiatan PKKMB.
+                    </p>
+
+                    <p class="text-orange-500 font-bold text-xl mt-4">
+                        Rp35.000
+                    </p>
+
+                </div>
+
+            </a>
+
+            <!-- Papermob -->
+            <a href="detail_produk.html"
+                class="bg-stone-50 rounded-3xl overflow-hidden hover:shadow-xl transition">
+
+                <img
+                    src="s.jpeg"
+                    class="w-full h-72 object-cover">
+
+                <div class="p-6">
+
+                    <span class="bg-orange-100 text-orange-600 px-3 py-1 rounded-full text-sm">
+                        PKKMB
+                    </span>
+
+                    <h3 class="text-xl font-bold mt-4">
+                        Papermob PKKMB
+                    </h3>
+
+                    <p class="text-gray-500 mt-2">
+                        Atribut papermob dan perlengkapan kegiatan mahasiswa baru.
+                    </p>
+
+                    <p class="text-orange-500 font-bold text-xl mt-4">
+                        Rp15.000
+                    </p>
+
+                </div>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+<script>
+function openModal() {
+    document
+        .getElementById('pkkmbModal')
+        .classList.remove('hidden');
+}
+
+function closeModal() {
+    document
+        .getElementById('pkkmbModal')
+        .classList.add('hidden');
+}
+
+window.addEventListener('click', function(e) {
+    const modal = document.getElementById('pkkmbModal');
+
+    if (e.target === modal) {
+        closeModal();
+    }
+});
+</script>
 </body>
 </html>
